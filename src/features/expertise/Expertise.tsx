@@ -1,5 +1,6 @@
 import { Box, Layers, Network, Server, Wallet, type LucideIcon } from 'lucide-react'
 import { expertise } from '@/data/expertise'
+import { site } from '@/data/site'
 import type { Expertise as E } from '@/data/types'
 import { Section } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
@@ -10,7 +11,7 @@ const icons: Record<E['icon'], LucideIcon> = { server: Server, wallet: Wallet, l
 
 export function Expertise() {
   return (
-    <Section id="expertise" eyebrow="Engineering expertise" title="Where I Create Value">
+    <Section id="expertise" eyebrow="Engineering expertise" title="Where I Create Value" description={site.intro}>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
         {expertise.map((e, i) => {
           const Icon = icons[e.icon]
