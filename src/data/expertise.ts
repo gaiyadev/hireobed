@@ -7,7 +7,7 @@ export const expertise: Expertise[] = [
     icon: 'server',
     summary: 'APIs and services built to stay fast, secure, and maintainable as they grow.',
     points: [
-      'Node.js, TypeScript, NestJS, AdonisJS, Laravel',
+      'Node.js, TypeScript, Express.js, NestJS, AdonisJS, Laravel',
       'RESTful APIs and microservices',
       'PostgreSQL, Redis, database optimization',
       'Authentication, authorization, and security',

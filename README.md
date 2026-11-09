@@ -21,7 +21,7 @@ All copy lives in `src/data/`. Components contain no portfolio content.
 
 | File | What it controls |
 | --- | --- |
-| `site.ts` | Name, headline, hero copy, proof points, contact details, social links, CV files, portrait |
+| `site.ts` | Name, headline, hero copy, proof points, contact details, social links, portrait |
 | `projects.ts` | Featured projects (problem, role, architecture, challenges, solutions, results, links, thumbnail) |
 | `experience.ts` | Timeline, earlier experience, education |
 | `expertise.ts`, `stack.ts`, `philosophy.ts` | Expertise cards, tech stack, principles |
@@ -29,8 +29,6 @@ All copy lives in `src/data/`. Components contain no portfolio content.
 
 **Projects:** add an object to `projects.ts`. Put a 16:10 screenshot in `public/projects/` and set `image`.
 Leave `impact` empty until you have verified results; empty sections are hidden. Do not add numbers you cannot defend.
-
-**CVs:** replace the PDFs in `public/cv/` and keep the filenames (or update `site.cv`).
 
 ## Configuration
 

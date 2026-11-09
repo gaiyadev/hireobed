@@ -4,7 +4,8 @@ import type { TechCategory } from './types'
 export const stack: TechCategory[] = [
   { name: 'Backend', items: [
     { name: 'Node.js', slug: 'nodedotjs' }, { name: 'TypeScript', slug: 'typescript' },
-    { name: 'NestJS', slug: 'nestjs' }, { name: 'AdonisJS', slug: 'adonisjs' },
+    { name: 'Express.js', slug: 'express' }, { name: 'NestJS', slug: 'nestjs' },
+    { name: 'AdonisJS', slug: 'adonisjs' },
     { name: 'Laravel', slug: 'laravel' }, { name: 'Java', slug: 'openjdk' },
     { name: 'Spring Boot', slug: 'springboot' }, { name: 'Go', slug: 'go' },
   ] },

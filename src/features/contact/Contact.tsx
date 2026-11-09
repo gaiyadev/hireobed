@@ -1,4 +1,4 @@
-import { Download, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { site } from '@/data/site'
 import { Section } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
@@ -32,11 +32,6 @@ export function Contact() {
           <div className="flex flex-wrap gap-3 pt-2">
             <Button href={`mailto:${site.email}?subject=Project%20discussion`}>Discuss a Project</Button>
             <Button href={site.whatsapp} variant="secondary">Let's Talk Engineering</Button>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {site.cv.map((c) => (
-              <Button key={c.href} href={c.href} download variant="ghost" className="border border-line !py-2"><Download size={15} /> {c.label}</Button>
-            ))}
           </div>
         </Reveal>
         <Reveal delay={0.08}><Card className="p-6 sm:p-8"><ContactForm /></Card></Reveal>

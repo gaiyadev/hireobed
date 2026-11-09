@@ -21,8 +21,8 @@ export const site = {
   location: 'Abuja, Nigeria | Working Globally',
   availability: 'Available for opportunities',
   email: 'gaiyaobed94@gmail.com',
-  whatsapp: 'https://wa.me/2349033440507',
-  phone: '+234 903 344 0507',
+  whatsapp: 'https://wa.me/2347058149795',
+  phone: '+234 705 814 9795',
   links: {
     github: 'https://github.com/gaiyadev',
     linkedin: 'https://www.linkedin.com/in/obed-m-gaiya-128467180',
@@ -30,10 +30,6 @@ export const site = {
     x: undefined as string | undefined,
     blog: 'https://gaiyaobed.hashnode.dev',
   },
-  cv: [
-    { label: 'Full-Stack CV', href: '/cv/Obed-Gaiya-Full-Stack-CV.pdf' },
-    { label: 'Fintech CV', href: '/cv/Obed-Gaiya-Fintech-CV.pdf' },
-  ],
   /** Optional: path in /public, e.g. '/portrait.webp'. Placeholder shown when undefined. */
   portrait: '/portrait.jpg' as string | undefined,
   /** Set VITE_FORM_ENDPOINT (Formspree, Getform...). Falls back to opening the visitor's mail client. */
