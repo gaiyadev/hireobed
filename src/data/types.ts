@@ -34,6 +34,12 @@ export interface TechCategory { name: string; items: Array<{ name: string; slug?
 
 export interface Principle { title: string; body: string }
 
+export interface JobPoint {
+  /** Short bold lead-in, e.g. "Duplicate-proof payments". */
+  lead: string
+  text: string
+}
+
 export interface Job {
   role: string
   company: string
@@ -41,6 +47,24 @@ export interface Job {
   location: string
   period: string
   type: string
-  points: string[]
+  /** One line on what the product is and why it mattered. */
+  summary?: string
+  /** Marks a fintech role: shown with an accent treatment and capability chips. */
+  fintech?: boolean
+  /** Money-safety capabilities you actually built in this role. */
+  capabilities?: string[]
+  /** Verified, measurable results only. Never add a number you cannot defend. */
+  highlights?: Array<{ value: string; label: string }>
+  points: JobPoint[]
+  tech: string[]
+}
+
+export interface EarlierRole {
+  role: string
+  company: string
+  type?: string
+  period: string
+  /** Label above the tags: "Stack" for engineering roles, "Taught" for instructor roles. */
+  tagsLabel: 'Stack' | 'Taught'
   tech: string[]
 }

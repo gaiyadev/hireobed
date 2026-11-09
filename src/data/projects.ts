@@ -46,7 +46,7 @@ export const projects: Project[] = [
       'Guests top up wallets, spray money and send gifts in real time, and celebrants withdraw to their bank accounts. Web and mobile.',
     problem:
       "Spraying cash at events is messy, physical, and impossible for guests who can't attend in person. DigiSpray lets guests gift digitally, even remotely.",
-    role: 'Software Engineer (Contract), leading the platform rebuild',
+    role: 'Senior Full-Stack Engineer (Contract), leading the platform rebuild',
     verified: true,
     tech: ['Flutter', 'Firebase', 'Node.js', 'Express.js', 'Vue.js', 'Redis'],
     architecture: [
