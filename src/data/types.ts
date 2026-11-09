@@ -68,3 +68,10 @@ export interface EarlierRole {
   tagsLabel: 'Stack' | 'Taught'
   tech: string[]
 }
+
+export interface OpenSourceProject {
+  name: string
+  description: string
+  tech: string[]
+  links: Array<{ label: string; href: string; kind: 'github' | 'registry' }>
+}

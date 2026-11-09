@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 import { ProjectCard } from './ProjectCard'
+import { OpenSource } from './OpenSource'
 import { ProjectModal } from './ProjectModal'
 
 // Lead with projects whose details are verified; stable sort keeps your order otherwise.
@@ -22,7 +23,8 @@ export function Projects() {
           </Reveal>
         ))}
       </div>
-      <Reveal className="mt-10 flex justify-center">
+      <OpenSource />
+      <Reveal className="mt-16 flex justify-center">
         <Button href="#contact" variant="secondary">Discuss a Project</Button>
       </Reveal>
       <ProjectModal project={active} onClose={close} />
