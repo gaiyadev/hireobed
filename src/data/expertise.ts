@@ -7,7 +7,7 @@ export const expertise: Expertise[] = [
     icon: 'server',
     summary: 'APIs and services built to stay fast, secure, and maintainable as they grow.',
     points: [
-      'Node.js, TypeScript, NestJS, AdonisJS, Laravel',
+      'Node.js, TypeScript, Express.js, NestJS, AdonisJS, Laravel',
       'RESTful APIs and microservices',
       'PostgreSQL, Redis, database optimization',
       'Authentication, authorization, and security',
@@ -32,7 +32,7 @@ export const expertise: Expertise[] = [
     icon: 'layers',
     summary: 'Web and mobile products delivered end to end, from schema to screen.',
     points: [
-      'React, TypeScript, Angular',
+      'React, Next.js, Vue.js, Nuxt.js, Angular, TypeScript',
       'Flutter and React Native',
       'Modern web and mobile applications',
       'Scalable frontend architecture',

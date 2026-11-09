@@ -1,41 +1,88 @@
-import type { Job } from './types'
+import type { EarlierRole, Job } from './types'
 
 // Source: CV. Edit freely.
 export const experience: Job[] = [
-  { role: 'Software Engineer', company: 'DigiSpray LLC', url: 'https://www.digispray.app/', location: 'Lagos, Nigeria', period: '2025 – Present', type: 'Contract', tech: ['Flutter', 'Firebase', 'Node.js', 'Express.js', 'Vue.js', 'Redis'], points: [
-    'Leading the rebuild and architectural refactoring of the web and mobile platform.',
-    'Building a real-time money-spraying platform: wallet top-ups, gifting, and bank withdrawals.',
-    'Backend designed for bursts of simultaneous transactions using idempotency keys, verified webhooks, and reconciliation.',
-  ] },
-  { role: 'Co-Founder & Software Engineer', company: 'Zuka Solutions Limited', url: 'https://zuka-solutions.com/', location: 'Nigeria', period: '2025 – Present', type: 'Co-founder', tech: ['WhatsApp', 'FastAPI', 'Node.js', 'Fastify', 'React'], points: [
-    'Built Zuka, a WhatsApp money assistant for balances, activity, transfers, and payments.',
-    'Review-and-approve transaction flows with status tracking that prevents duplicate actions.',
-    'Secure identity verification and onboarding outside the chat.',
-  ] },
-  { role: 'Senior Software Engineer', company: 'FracXn', url: 'https://fracxn.com/', location: 'Dubai, UAE', period: '2024 – 2025', type: 'Contract', tech: ['AdonisJS', 'Next.js', 'MySQL', 'PostgreSQL', 'Redis'], points: [
-    'Built backend services and React/Next.js frontends for loan apps, payroll, invoice financing, and instant settlements.',
-    'Built a lender risk scoring service; integrated Lean Technologies open banking, Emirates NBD, and Stripe.',
-    'Integrated QuickBooks, Zoho Books, and Wafeq; built OCR document extraction; implemented UAE PASS SSO.',
-  ] },
-  { role: 'Lead Software Engineer', company: 'Juice Technology', url: 'https://juiceme.io/', location: 'Lagos, Nigeria', period: '2023 – 2024', type: 'Contract', tech: ['React', 'PostgreSQL', 'Laravel', 'Laravel Nova', 'WhatsApp', 'Redis', 'Node.js'], points: [
-    'Led system design for an HR and payroll SaaS platform; built Laravel Nova admin dashboards.',
-    'Built a NestJS wallet service for Juiceme and connected WhatsApp chatbots through Infobip.',
-  ] },
-  { role: 'Lead Software Engineer', company: 'Outsource Global (WorkNation)', url: 'https://www.worknation.africa/', location: 'Abuja, Nigeria', period: '2021 – 2025', type: 'Full time', tech: ['Node.js', 'NestJS', 'AdonisJS', 'PostgreSQL', 'Redis', 'Moodle'], points: [
-    'Scaled the platform to 100K+ requests per second at 99.9% uptime.',
-    'Migrated backend and frontend to microservices; cut API response times by 40% with caching.',
-    'Built a coding challenge platform that made technical hiring 60% more efficient.',
-    'Set code review standards that reduced defects by 30%; mentored engineers.',
-  ] },
-  { role: 'Software Engineer', company: 'Afropolis', location: '', period: '2020 – 2021', type: 'Contract', tech: ['NestJS', 'Node.js', 'React Native', 'Redis', 'WebSockets', 'Laravel', 'PostgreSQL'], points: [
-    'Built RESTful APIs in Laravel and Node.js, real-time features with WebSockets, and reusable React, Vue.js, and React Native components.',
-  ] },
+  {
+    role: 'Senior Full-Stack Engineer', company: 'DigiSpray LLC', url: 'https://www.digispray.app/', location: 'Lagos, Nigeria', period: '2025 – Present', type: 'Contract',
+    fintech: true,
+    summary: 'Real-time digital money-spraying for live events: guests top up wallets and gift in real time, and celebrants withdraw to their banks.',
+    capabilities: ['Ledger balances', 'Idempotency', 'Verified webhooks', 'Reconciliation', 'KYC'],
+    points: [
+      { lead: 'Wallet engine', text: 'Built top-ups, sprays, gifting, and withdrawals, keeping balances accurate during bursts of simultaneous transactions at live events.' },
+      { lead: 'Duplicate-proof payments', text: 'Implemented ledger-based balances and idempotency keys against duplicate sprays, with verified webhooks and reconciliation against provider records.' },
+      { lead: 'Platform rebuild', text: 'Leading the rebuild of the web and mobile platform and core business logic, cutting technical debt and speeding up new payment features.' },
+    ],
+    tech: ['Flutter', 'Firebase', 'Node.js', 'Express.js', 'Vue.js', 'Redis'],
+  },
+  {
+    role: 'Co-Founder & Software Engineer', company: 'Zuka Solutions Limited', url: 'https://zuka-solutions.com/', location: 'Nigeria', period: '2025 – Present', type: 'Co-founder',
+    fintech: true,
+    summary: 'A WhatsApp money assistant for balances, activity, receipts, transfers, and payments, running on partner financial infrastructure.',
+    capabilities: ['Ledger balances', 'Idempotency', 'Review-and-approve flows', 'Duplicate-send prevention', 'Identity verification'],
+    points: [
+      { lead: 'Approval before money moves', text: 'Built review-and-approve transfer flows that show the recipient, amount, and fees before anything is sent.' },
+      { lead: 'No duplicate sends', text: 'Added status tracking so a retried or repeated message cannot trigger the same transfer twice.' },
+      { lead: 'Verification outside the chat', text: 'Built identity verification and onboarding in purpose-built forms, with stronger checks for higher-risk actions.' },
+    ],
+    tech: ['WhatsApp', 'FastAPI', 'Node.js', 'Fastify', 'Spring Boot', 'React'],
+  },
+  {
+    role: 'Senior Software Engineer', company: 'FracXn', url: 'https://fracxn.com/', location: 'Dubai, UAE', period: '2024 – 2025', type: 'Contract',
+    fintech: true,
+    summary: 'Four financial products for the UAE market: loan apps, payroll, invoice financing, and instant settlements.',
+    capabilities: ['Ledger balances', 'Idempotent APIs', 'Webhooks', 'Reconciliation', 'KYC', 'Open banking', 'Risk scoring'],
+    points: [
+      { lead: 'Lender risk scoring', text: 'Built a risk scoring service that helps lenders assess borrower creditworthiness.' },
+      { lead: 'Money-safe core', text: 'Implemented ledger-based balances, idempotent payment APIs, webhook handling, reconciliation, and KYC across loan and settlement flows.' },
+      { lead: 'Banking and payments', text: 'Integrated Lean Technologies open banking, Emirates NBD banking services, and Stripe for account data, settlements, and customer payments.' },
+      { lead: 'Finance automation and identity', text: 'Built OCR document extraction, integrated QuickBooks, Zoho Books, and Wafeq, and implemented UAE PASS digital identity for onboarding.' },
+      { lead: 'Full stack', text: 'Delivered the backend services and the responsive React and Next.js frontends.' },
+    ],
+    tech: ['AdonisJS', 'Next.js', 'MySQL', 'PostgreSQL', 'Redis'],
+  },
+  {
+    role: 'Lead Software Engineer', company: 'Juice Technology', url: 'https://juiceme.io/', location: 'Lagos, Nigeria', period: '2023 – 2024', type: 'Contract',
+    fintech: true,
+    summary: 'An HR and payroll SaaS platform with Juiceme, an earned-wage product that lets employers pay staff any day.',
+    capabilities: ['Ledger balances', 'Idempotent payouts', 'Webhooks', 'Reconciliation', 'KYC'],
+    points: [
+      { lead: 'Earned-wage wallet', text: 'Built a NestJS wallet with ledger balances, idempotent payouts, webhooks, reconciliation, and KYC.' },
+      { lead: 'Payroll in WhatsApp', text: 'Brought payroll into WhatsApp by connecting chatbots to the backend through Infobip.' },
+      { lead: 'Architecture and finance tooling', text: 'Led system design for the HR and payroll SaaS platform and built its Laravel Nova admin and finance dashboards.' },
+    ],
+    tech: ['React', 'PostgreSQL', 'Laravel', 'Laravel Nova', 'WhatsApp', 'Redis', 'Node.js'],
+  },
+  {
+    role: 'Lead Software Engineer', company: 'Outsource Global', location: 'Abuja, Nigeria', period: '2021 – 2025', type: 'Full time',
+    summary: 'WorkNation, a workforce-development and learning platform serving large-scale user operations.',
+    highlights: [
+      { value: '100K+', label: 'requests per second' },
+      { value: '99.9%', label: 'uptime' },
+      { value: '40%', label: 'faster API responses' },
+      { value: '30%', label: 'fewer defects' },
+    ],
+    points: [
+      { lead: 'Scale', text: 'Scaled the platform to 100K+ requests per second at 99.9% uptime.' },
+      { lead: 'Microservices migration', text: 'Re-engineered backend and frontend into microservices, improving reliability and deployment speed, and cut API response times by 40% with caching.' },
+      { lead: 'Hiring platform', text: 'Built a coding challenge platform that made technical hiring 60% more efficient, plus career and skills assessment tools.' },
+      { lead: 'Technical leadership', text: 'Set code review standards that reduced defects by 30%, mentored engineers, and delivered multiple projects from concept to production.' },
+    ],
+    tech: ['Node.js', 'NestJS', 'AdonisJS', 'PostgreSQL', 'Redis', 'Moodle'],
+  },
+  {
+    role: 'Software Engineer', company: 'Afropolis', location: '', period: '2020 – 2021', type: 'Contract',
+    points: [
+      { lead: 'APIs and real-time', text: 'Built RESTful APIs in Laravel and Node.js and real-time features with WebSockets.' },
+      { lead: 'Shared components', text: 'Built reusable components in React, Vue.js, and React Native.' },
+    ],
+    tech: ['NestJS', 'Node.js', 'React Native', 'Redis', 'WebSockets', 'Laravel', 'PostgreSQL'],
+  },
 ]
 
-export const earlier = [
-  { text: 'Software Engineer and Lead Instructor (Contract), Tribesquare Inc. · 2021', tech: ['Node.js', 'React', 'Express.js', 'React Native', 'MongoDB'] },
-  { text: 'Software Engineering Instructor, Campus Technologies (NIIT) · 2019 – 2021', tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'React', 'Node.js', 'Express.js', 'MongoDB'] },
-  { text: 'Junior Software Engineer, Ogohtech Computers · 2017 – 2018', tech: ['WordPress', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'] },
+export const earlier: EarlierRole[] = [
+  { role: 'Software Engineer and Lead Instructor', company: 'Tribesquare Inc.', type: 'Contract', period: '2021', tagsLabel: 'Stack', tech: ['Node.js', 'React', 'Express.js', 'React Native', 'MongoDB'] },
+  { role: 'Software Engineering Instructor', company: 'Campus Technologies (NIIT)', period: '2019 – 2021', tagsLabel: 'Taught', tech: ['JavaScript', 'PHP', 'MySQL', 'React', 'Node.js'] },
+  { role: 'Junior Software Engineer', company: 'Ogohtech Computers', period: '2017 – 2018', tagsLabel: 'Stack', tech: ['WordPress', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'] },
 ]
 
 export const education = [

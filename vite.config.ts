@@ -9,7 +9,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => (id.includes('framer-motion') ? 'motion' : id.includes('node_modules') ? 'vendor' : undefined),
+        manualChunks: (id) =>
+          /node_modules\/(framer-motion|motion-dom|motion-utils)\//.test(id) ? 'motion' : /node_modules\/(react|react-dom|scheduler)\//.test(id) ? 'vendor' : undefined,
       },
     },
   },

@@ -1,20 +1,22 @@
-import { useState } from 'react'
+import { MessagesSquare, Sparkles, Workflow, type LucideIcon } from 'lucide-react'
+import type { TechGlyph } from '@/data/types'
+import { techIcons } from '@/lib/techIcons'
 
-/** Simple Icons glyph, recolored to the theme via CSS filter. Renders nothing if it fails to load. */
-export function TechIcon({ slug, name }: { slug?: string; name: string }) {
-  const [failed, setFailed] = useState(false)
-  if (!slug || failed) return null
-  return (
-    <img
-      src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${slug}.svg`}
-      alt=""
-      aria-hidden
-      title={name}
-      width={20}
-      height={20}
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className="h-5 w-5 opacity-70 brightness-0 invert [.light_&]:invert-0"
-    />
-  )
+const glyphs: Record<TechGlyph, LucideIcon> = { chat: MessagesSquare, sparkles: Sparkles, workflow: Workflow }
+
+/** Brand logo (inline SVG, inherits text color so it follows the theme) or a generic glyph for concepts without a logo. */
+export function TechIcon({ slug, glyph }: { slug?: string; glyph?: TechGlyph }) {
+  const icon = slug ? techIcons[slug] : undefined
+  if (icon) {
+    return (
+      <svg viewBox="0 0 24 24" width={18} height={18} fill="currentColor" aria-hidden className="shrink-0 text-muted">
+        <path d={icon.path} />
+      </svg>
+    )
+  }
+  if (glyph) {
+    const Glyph = glyphs[glyph]
+    return <Glyph size={18} strokeWidth={1.6} aria-hidden className="shrink-0 text-muted" />
+  }
+  return null
 }

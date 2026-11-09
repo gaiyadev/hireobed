@@ -4,13 +4,15 @@ import type { TechCategory } from './types'
 export const stack: TechCategory[] = [
   { name: 'Backend', items: [
     { name: 'Node.js', slug: 'nodedotjs' }, { name: 'TypeScript', slug: 'typescript' },
-    { name: 'NestJS', slug: 'nestjs' }, { name: 'AdonisJS', slug: 'adonisjs' },
+    { name: 'Express.js', slug: 'express' }, { name: 'NestJS', slug: 'nestjs' },
+    { name: 'AdonisJS', slug: 'adonisjs' },
     { name: 'Laravel', slug: 'laravel' }, { name: 'Java', slug: 'openjdk' },
     { name: 'Spring Boot', slug: 'springboot' }, { name: 'Go', slug: 'go' },
   ] },
   { name: 'Frontend', items: [
     { name: 'React', slug: 'react' }, { name: 'TypeScript', slug: 'typescript' },
-    { name: 'Angular', slug: 'angular' }, { name: 'Vue.js', slug: 'vuedotjs' },
+    { name: 'Next.js', slug: 'nextdotjs' }, { name: 'Angular', slug: 'angular' },
+    { name: 'Vue.js', slug: 'vuedotjs' }, { name: 'Nuxt.js', slug: 'nuxt' },
   ] },
   { name: 'Mobile', items: [{ name: 'Flutter', slug: 'flutter' }, { name: 'React Native', slug: 'react' }] },
   { name: 'Database', items: [
@@ -20,10 +22,10 @@ export const stack: TechCategory[] = [
   { name: 'Infrastructure', items: [
     { name: 'Docker', slug: 'docker' }, { name: 'Kubernetes', slug: 'kubernetes' }, { name: 'Git', slug: 'git' },
     { name: 'GitHub Actions', slug: 'githubactions' }, { name: 'Linux', slug: 'linux' },
-    { name: 'CI/CD' },
+    { name: 'CI/CD', glyph: 'workflow' },
   ] },
   { name: 'AI & Automation', items: [
-    { name: 'OpenAI APIs' }, { name: 'n8n', slug: 'n8n' },
-    { name: 'Conversational AI' }, { name: 'LLM integrations' },
+    { name: 'OpenAI APIs', slug: 'openai' }, { name: 'Claude Code', slug: 'claude' }, { name: 'n8n', slug: 'n8n' },
+    { name: 'Conversational AI', glyph: 'chat' }, { name: 'LLM integrations', glyph: 'sparkles' },
   ] },
 ]

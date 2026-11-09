@@ -1,3 +1,5 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
 @import 'tailwindcss';
 
 /* Design tokens. Dark-first; `.light` on <html> swaps them. */
@@ -9,7 +11,7 @@
   --border-strong: rgb(255 255 255 / 0.16);
   --fg: #f1f3f2;
   --muted: #98a19c;
-  --subtle: #66706b;
+  --subtle: #848e89;
   --accent: #34d399;
   --accent-strong: #10b981;
   --accent-ink: #04130d;
@@ -23,16 +25,16 @@
   --border-strong: rgb(10 12 11 / 0.2);
   --fg: #0d1210;
   --muted: #4d5752;
-  --subtle: #78827d;
-  --accent: #059669;
-  --accent-strong: #047857;
+  --subtle: #5f6964;
+  --accent: #047857;
+  --accent-strong: #065f46;
   --accent-ink: #ffffff;
   --glass: rgb(255 255 255 / 0.7);
 }
 
 @theme {
-  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, monospace;
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
@@ -47,7 +49,7 @@
   --color-glass: var(--glass);
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; color-scheme: dark; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; color-scheme: dark; overflow-x: clip; }
 html.light { color-scheme: light; }
 body {
   background: var(--bg);
@@ -56,6 +58,9 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s, color 0.3s;
 }
+a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
 ::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
 
 .bg-grid {
@@ -69,4 +74,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Scroll reveal (see Reveal.tsx). Only hidden when JS runs, and never under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+  .reveal-in { opacity: 1; transform: none; will-change: auto; }
 }

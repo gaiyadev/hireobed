@@ -3,12 +3,22 @@ import type { Project } from '@/data/types'
 /** Placeholder artwork shown until `project.image` is provided. Deterministic per slug. */
 export function ProjectArt({ project, className }: { project: Project; className?: string }) {
   if (project.image) {
-    return <img src={project.image} alt={`${project.name} screenshot`} loading="lazy" className={className} />
+    return (
+      <img
+        src={project.image}
+        alt={`${project.name} website homepage`}
+        width={800}
+        height={500}
+        loading="lazy"
+        decoding="async"
+        className={`aspect-[16/10] object-cover object-top ${className ?? ''}`}
+      />
+    )
   }
   const seed = [...project.slug].reduce((a, c) => a + c.charCodeAt(0), 0)
   const bars = Array.from({ length: 14 }, (_, i) => 20 + ((seed * (i + 3) * 7) % 70))
   return (
-    <div className={`relative overflow-hidden bg-surface-2 ${className ?? ''}`} role="img" aria-label={`${project.name} artwork placeholder`}>
+    <div className={`relative aspect-[16/10] overflow-hidden bg-surface-2 ${className ?? ''}`} role="img" aria-label={`${project.name} artwork placeholder`}>
       <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice" aria-hidden>
         <g fill="var(--accent)" opacity="0.22">
           {bars.map((h, i) => <rect key={i} x={20 + i * 27} y={200 - h * 1.8} width="14" height={h * 1.8} rx="3" />)}
