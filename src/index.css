@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+/* Design tokens. Dark-first; `.light` on <html> swaps them. */
+:root {
+  --bg: #0a0c0b;
+  --surface: #101311;
+  --surface-2: #151916;
+  --border: rgb(255 255 255 / 0.08);
+  --border-strong: rgb(255 255 255 / 0.16);
+  --fg: #f1f3f2;
+  --muted: #98a19c;
+  --subtle: #66706b;
+  --accent: #34d399;
+  --accent-strong: #10b981;
+  --accent-ink: #04130d;
+  --glass: rgb(16 19 17 / 0.6);
+}
+.light {
+  --bg: #f7f8f7;
+  --surface: #ffffff;
+  --surface-2: #eff2f0;
+  --border: rgb(10 12 11 / 0.1);
+  --border-strong: rgb(10 12 11 / 0.2);
+  --fg: #0d1210;
+  --muted: #4d5752;
+  --subtle: #78827d;
+  --accent: #059669;
+  --accent-strong: #047857;
+  --accent-ink: #ffffff;
+  --glass: rgb(255 255 255 / 0.7);
+}
+
+@theme {
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-glass: var(--glass);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; color-scheme: dark; }
+html.light { color-scheme: light; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
+}
+::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
+
+.bg-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
