@@ -10,7 +10,14 @@ export const site = {
     'I build reliable backend systems, fintech infrastructure, and modern digital products that help businesses scale.',
   intro:
     'I design and build scalable software systems that solve real business problems. From high-performance backend architectures and fintech infrastructure to modern web and mobile applications, I turn complex ideas into reliable, production-ready products.',
-  tagline: "I don't just write code. I engineer systems that power businesses.",
+  tagline: "I don't just build applications. I engineer scalable systems that power businesses.",
+  siteUrl: 'https://gaiyaobed.com.ng',
+  // What a hiring manager should take away in five seconds.
+  proofPoints: [
+    'Fintech: wallets, ledgers, payments, and open banking in Nigeria and the UAE',
+    'Scale: 100K+ requests per second at 99.9% uptime',
+    'Delivery: backend, web, and mobile, concept to production',
+  ],
   location: 'Abuja, Nigeria | Working Globally',
   availability: 'Available for opportunities',
   email: 'gaiyaobed94@gmail.com',
@@ -19,8 +26,8 @@ export const site = {
   links: {
     github: 'https://github.com/gaiyadev',
     linkedin: 'https://www.linkedin.com/in/obed-m-gaiya-128467180',
-    // TODO: replace with your real X handle.
-    x: 'https://x.com/',
+    /** Set to your profile URL (e.g. 'https://x.com/handle') to show an X icon. Hidden while undefined. */
+    x: undefined as string | undefined,
     blog: 'https://gaiyaobed.hashnode.dev',
   },
   cv: [
@@ -29,8 +36,8 @@ export const site = {
   ],
   /** Optional: path in /public, e.g. '/portrait.webp'. Placeholder shown when undefined. */
   portrait: '/portrait.jpg' as string | undefined,
-  /** Optional: a form endpoint (Formspree, Getform...). Falls back to opening the visitor's mail client. */
-  formEndpoint: undefined as string | undefined,
+  /** Set VITE_FORM_ENDPOINT (Formspree, Getform...). Falls back to opening the visitor's mail client. */
+  formEndpoint: (import.meta.env.VITE_FORM_ENDPOINT as string | undefined) || undefined,
 }
 
 export const nav: NavItem[] = [
@@ -47,5 +54,5 @@ export const credibility = [
   { value: '9+', label: 'Years building software' },
   { value: '100K+', label: 'Requests/sec scaled at WorkNation' },
   { value: '99.9%', label: 'Platform uptime' },
-  { value: 'NG · UAE', label: 'Fintech delivered across two markets' },
+  { value: 'NG + UAE', label: 'Fintech delivered in two markets' },
 ]

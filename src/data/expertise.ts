@@ -32,7 +32,7 @@ export const expertise: Expertise[] = [
     icon: 'layers',
     summary: 'Web and mobile products delivered end to end, from schema to screen.',
     points: [
-      'React, TypeScript, Angular',
+      'React, Next.js, Vue.js, Nuxt.js, Angular, TypeScript',
       'Flutter and React Native',
       'Modern web and mobile applications',
       'Scalable frontend architecture',

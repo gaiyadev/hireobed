@@ -9,8 +9,8 @@ export function Experience() {
     <Section id="experience" eyebrow="Professional experience" title="A Track Record of Shipping Production Systems">
       <ol className="relative ml-2 border-l border-line">
         {experience.map((job, i) => (
-          <Reveal key={`${job.company}-${job.period}`} delay={0.03}>
-            <li className="relative pb-12 pl-8 last:pb-0">
+          <Reveal as="li" key={`${job.company}-${job.period}`} className="relative pb-12 pl-8 last:pb-0">
+            <>
               <span className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ${i === 0 ? 'bg-accent shadow-[0_0_12px_var(--accent)]' : 'bg-line-strong'}`} />
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <h3 className="text-xl font-semibold tracking-tight">{job.role}</h3>
@@ -25,7 +25,7 @@ export function Experience() {
                   </li>
                 ))}
               </ul>
-            </li>
+            </>
           </Reveal>
         ))}
       </ol>

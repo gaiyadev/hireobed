@@ -1,6 +1,15 @@
+import { useEffect } from 'react'
 import { Button } from '@/components/ui/Button'
 
 export function NotFound() {
+  useEffect(() => {
+    document.title = 'Page not found | Obed Gaiya'
+    const meta = document.createElement('meta')
+    meta.name = 'robots'
+    meta.content = 'noindex'
+    document.head.appendChild(meta)
+    return () => meta.remove()
+  }, [])
   return (
     <main className="grid min-h-screen place-items-center px-6 text-center">
       <div>

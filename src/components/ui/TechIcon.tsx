@@ -1,20 +1,12 @@
-import { useState } from 'react'
+import { techIcons } from '@/lib/techIcons'
 
-/** Simple Icons glyph, recolored to the theme via CSS filter. Renders nothing if it fails to load. */
-export function TechIcon({ slug, name }: { slug?: string; name: string }) {
-  const [failed, setFailed] = useState(false)
-  if (!slug || failed) return null
+/** Inline brand glyph that inherits text color, so it follows the theme. Renders nothing for unknown slugs. */
+export function TechIcon({ slug }: { slug?: string }) {
+  const icon = slug ? techIcons[slug] : undefined
+  if (!icon) return null
   return (
-    <img
-      src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${slug}.svg`}
-      alt=""
-      aria-hidden
-      title={name}
-      width={20}
-      height={20}
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className="h-5 w-5 opacity-70 brightness-0 invert [.light_&]:invert-0"
-    />
+    <svg viewBox="0 0 24 24" width={18} height={18} fill="currentColor" aria-hidden className="shrink-0 text-muted">
+      <path d={icon.path} />
+    </svg>
   )
 }

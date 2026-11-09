@@ -10,7 +10,8 @@ export const stack: TechCategory[] = [
   ] },
   { name: 'Frontend', items: [
     { name: 'React', slug: 'react' }, { name: 'TypeScript', slug: 'typescript' },
-    { name: 'Angular', slug: 'angular' }, { name: 'Vue.js', slug: 'vuedotjs' },
+    { name: 'Next.js', slug: 'nextdotjs' }, { name: 'Angular', slug: 'angular' },
+    { name: 'Vue.js', slug: 'vuedotjs' }, { name: 'Nuxt.js', slug: 'nuxt' },
   ] },
   { name: 'Mobile', items: [{ name: 'Flutter', slug: 'flutter' }, { name: 'React Native', slug: 'react' }] },
   { name: 'Database', items: [
@@ -23,7 +24,7 @@ export const stack: TechCategory[] = [
     { name: 'CI/CD' },
   ] },
   { name: 'AI & Automation', items: [
-    { name: 'OpenAI APIs' }, { name: 'n8n', slug: 'n8n' },
+    { name: 'OpenAI APIs' }, { name: 'Claude Code', slug: 'claude' }, { name: 'n8n', slug: 'n8n' },
     { name: 'Conversational AI' }, { name: 'LLM integrations' },
   ] },
 ]

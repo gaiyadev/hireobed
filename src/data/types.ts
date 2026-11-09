@@ -13,16 +13,20 @@ export interface Project {
   name: string
   tagline: string
   description: string
+  /** The business problem the product solves. */
+  problem: string
   role: string
   /** Set false until you have verified the details; shows a "details pending" note in the UI. */
   verified: boolean
   tech: string[]
+  /** High-level architecture notes: only what you can stand behind. */
+  architecture: string[]
   challenges: string[]
   solutions: string[]
   impact: string[]
   github?: string
   live?: string
-  /** Optional image path in /public (e.g. /projects/digispray.webp). A generated placeholder is used otherwise. */
+  /** Image in /public (e.g. /projects/digispray.jpg), 16:10. A generated placeholder is used otherwise. */
   image?: string
 }
 
