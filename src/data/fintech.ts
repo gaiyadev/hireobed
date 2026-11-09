@@ -17,6 +17,7 @@ export const fintech = {
   /** Real systems built, from the CV. */
   evidence: [
     'DigiSpray: wallet engine with ledger balances, idempotency keys, verified webhooks, reconciliation, KYC.',
+    'Zuka: WhatsApp money assistant with review-and-approve transfers, duplicate-send prevention, and identity verification outside the chat.',
     'FracXn (Dubai): loans, payroll, invoice financing, instant settlements; Lean Technologies, Emirates NBD, Stripe.',
     'Juiceme: NestJS wallet for an earned-wage product with idempotent payouts.',
     'Open source: Fincra Checkout SDKs for React Native and Flutter.',

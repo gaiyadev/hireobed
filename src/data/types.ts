@@ -30,7 +30,12 @@ export interface Project {
   image?: string
 }
 
-export interface TechCategory { name: string; items: Array<{ name: string; slug?: string }> }
+export type TechGlyph = 'chat' | 'sparkles' | 'workflow'
+
+/** `slug` = brand logo (Simple Icons). `glyph` = generic line icon for concepts that have no logo. */
+export interface TechItem { name: string; slug?: string; glyph?: TechGlyph }
+
+export interface TechCategory { name: string; items: TechItem[] }
 
 export interface Principle { title: string; body: string }
 

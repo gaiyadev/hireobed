@@ -22,10 +22,10 @@ export const stack: TechCategory[] = [
   { name: 'Infrastructure', items: [
     { name: 'Docker', slug: 'docker' }, { name: 'Kubernetes', slug: 'kubernetes' }, { name: 'Git', slug: 'git' },
     { name: 'GitHub Actions', slug: 'githubactions' }, { name: 'Linux', slug: 'linux' },
-    { name: 'CI/CD' },
+    { name: 'CI/CD', glyph: 'workflow' },
   ] },
   { name: 'AI & Automation', items: [
-    { name: 'OpenAI APIs' }, { name: 'Claude Code', slug: 'claude' }, { name: 'n8n', slug: 'n8n' },
-    { name: 'Conversational AI' }, { name: 'LLM integrations' },
+    { name: 'OpenAI APIs', slug: 'openai' }, { name: 'Claude Code', slug: 'claude' }, { name: 'n8n', slug: 'n8n' },
+    { name: 'Conversational AI', glyph: 'chat' }, { name: 'LLM integrations', glyph: 'sparkles' },
   ] },
 ]

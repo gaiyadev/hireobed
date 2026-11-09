@@ -15,7 +15,7 @@ export function Stack() {
               <ul className="flex flex-wrap gap-2">
                 {cat.items.map((it) => (
                   <li key={it.name} className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-3 py-2 text-sm">
-                    <TechIcon slug={it.slug} />
+                    <TechIcon slug={it.slug} glyph={it.glyph} />
                     {it.name}
                   </li>
                 ))}
