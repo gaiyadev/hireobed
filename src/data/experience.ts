@@ -221,7 +221,14 @@ export const earlier: EarlierRole[] = [
     type: "Contract",
     period: "2021",
     tagsLabel: "Stack",
-    tech: ["Node.js", "React", "Express.js", "React Native", "MongoDB"],
+    tech: [
+      "Node.js",
+      "React",
+      "Express.js",
+      "React Native",
+      "MongoDB",
+      "Mongoose",
+    ],
   },
   {
     role: "Software Engineering Instructor",
@@ -248,28 +255,31 @@ export const earlier: EarlierRole[] = [
       "HTML",
       "CSS",
       "JavaScript",
+      "PHP",
       "Bootstrap",
       "JQuery",
       "AngularJs",
+      "MySQL",
+      "SQL",
     ],
   },
 ];
 
 export const education: Credential[] = [
   {
-    name: "B.Sc(HONS). Mathematics",
-    by: "Kaduna State University",
+    name: "B.Sc. (HONS) Mathematics",
+    by: "Kaduna State University (KASU)",
     period: "2012 – 2017",
   },
   {
-    name: "Postgraduate Diploma in Project Management (CIPM)",
-    by: "The Chartered Institute of Project Management",
-    period: "2018",
+    name: "Postgraduate Diploma in Project Management",
+    by: "The Chartered Institute of Project Management (CIPM)",
+    period: "2018 - 2019",
   },
   {
-    name: "Diploma in Facility Management (CIPM)",
-    by: "Chartered Institute of Contract Project and Facility Management",
-    period: "2018",
+    name: "Diploma in Facility Management",
+    by: "Chartered Institute of Contract Project and Facility Management (CICPFM)",
+    period: "2018 - 2019",
   },
 ];
 

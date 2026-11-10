@@ -1,10 +1,11 @@
-import { Mail } from 'lucide-react'
+import { Mail, PenLine } from 'lucide-react'
 import { site } from '@/data/site'
 import { GithubIcon, LinkedinIcon, XIcon } from './BrandIcons'
 
 const items = [
   { label: 'GitHub', href: site.links.github, Icon: GithubIcon },
   { label: 'LinkedIn', href: site.links.linkedin, Icon: LinkedinIcon },
+  { label: 'Blog', href: site.links.blog, Icon: PenLine },
   { label: 'Email', href: `mailto:${site.email}`, Icon: Mail },
   ...(site.links.x ? [{ label: 'X', href: site.links.x, Icon: XIcon }] : []),
 ]
