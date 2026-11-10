@@ -91,20 +91,15 @@ export const education: Credential[] = [
     name: 'Postgraduate Diploma in Project Management',
     by: 'The Chartered Institute of Project Management',
     period: '2018',
-    designations: ['ACIPM', 'CPMP'],
-    credentialId: '001477',
   },
   {
-    name: 'Diploma in Facility Management (Dip.FM)',
+    name: 'Diploma in Facility Management',
     by: 'Chartered Institute of Contract Project and Facility Management',
     period: '2018',
-    credentialId: '0002570',
   },
 ]
 
 export const certifications: Credential[] = [
   { name: 'Software Architecture', by: 'Udemy', period: '2022' },
-  // TODO: add the year for the DevOps course.
-  { name: 'DevOps', by: 'Udemy' },
   { name: 'Docker and Kubernetes', by: 'Udemy', period: '2022' },
 ]

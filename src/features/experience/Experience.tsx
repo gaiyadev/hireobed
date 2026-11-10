@@ -19,11 +19,6 @@ function CredentialGroup({ title, items }: { title: string; items: Credential[] 
                 {c.by}{c.by && c.period && ' · '}{c.period && <span className="font-mono text-xs">{c.period}</span>}
               </p>
             )}
-            {(c.designations || c.credentialId) && (
-              <p className="mt-0.5 font-mono text-xs text-subtle">
-                {[c.designations?.join(' · '), c.credentialId && `Cert. no. ${c.credentialId}`].filter(Boolean).join(' · ')}
-              </p>
-            )}
           </li>
         ))}
       </ul>

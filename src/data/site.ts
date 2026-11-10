@@ -3,6 +3,8 @@ import type { NavItem } from './types'
 export const site = {
   name: 'Obed Mathias Gaiya',
   shortName: 'Obed Gaiya',
+  /** Post-nominal letters, shown after the full name. */
+  designations: ['ACIPM', 'CPMP', 'Dip.FM'],
   title: 'Senior Full-Stack Engineer | Backend & Fintech Systems Engineer',
   eyebrow: 'SOFTWARE ENGINEER · SYSTEMS ARCHITECTURE · FINTECH',
   headline: ['Engineering Scalable Systems.', 'Building Products That Matter.'],
