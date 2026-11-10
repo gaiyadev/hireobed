@@ -1,4 +1,4 @@
-import type { EarlierRole, Job } from './types'
+import type { Credential, EarlierRole, Job } from './types'
 
 // Source: CV. Edit freely.
 export const experience: Job[] = [
@@ -85,9 +85,15 @@ export const earlier: EarlierRole[] = [
   { role: 'Junior Software Engineer', company: 'Ogohtech Computers', period: '2017 – 2018', tagsLabel: 'Stack', tech: ['WordPress', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'] },
 ]
 
-export const education = [
-  'B.Sc. Mathematics, Kaduna State University · 2012 – 2017',
-  'Postgraduate Diploma, Project Management',
-  'Software Architecture (Udemy, 2022) · DevOps (Udemy)',
-  'Docker and Kubernetes (Udemy, 2022)',
+export const education: Credential[] = [
+  { name: 'B.Sc. Mathematics', by: 'Kaduna State University', period: '2012 – 2017' },
+  // TODO: add the institution and year for the diploma.
+  { name: 'Postgraduate Diploma, Project Management' },
+]
+
+export const certifications: Credential[] = [
+  { name: 'Software Architecture', by: 'Udemy', period: '2022' },
+  // TODO: add the year for the DevOps course.
+  { name: 'DevOps', by: 'Udemy' },
+  { name: 'Docker and Kubernetes', by: 'Udemy', period: '2022' },
 ]

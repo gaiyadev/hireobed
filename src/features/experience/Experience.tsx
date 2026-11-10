@@ -1,9 +1,30 @@
-import { earlier, education, experience } from '@/data/experience'
+import { certifications, earlier, education, experience } from '@/data/experience'
+import type { Credential } from '@/data/types'
 import { JobEntry } from './JobEntry'
 import { Section } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
 import { Badge } from '@/components/ui/Badge'
 import { Card } from '@/components/ui/Card'
+
+function CredentialGroup({ title, items }: { title: string; items: Credential[] }) {
+  return (
+    <>
+      <h3 className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-accent">{title}</h3>
+      <ul className="space-y-4">
+        {items.map((c) => (
+          <li key={c.name}>
+            <p className="font-semibold leading-snug">{c.name}</p>
+            {(c.by || c.period) && (
+              <p className="mt-0.5 text-sm text-muted">
+                {c.by}{c.by && c.period && ' · '}{c.period && <span className="font-mono text-xs">{c.period}</span>}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
 
 export function Experience() {
   return (
@@ -39,7 +60,14 @@ export function Experience() {
             </ul>
           </Card>
         </Reveal>
-        <Reveal delay={0.06}><Card className="h-full p-6"><h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">Education & certifications</h3><ul className="space-y-2 text-sm text-muted">{education.map((e) => <li key={e}>{e}</li>)}</ul></Card></Reveal>
+        <Reveal delay={0.06} className="h-full">
+          <Card className="h-full p-6">
+            <CredentialGroup title="Education" items={education} />
+            <div className="mt-6 border-t border-line pt-6">
+              <CredentialGroup title="Certifications" items={certifications} />
+            </div>
+          </Card>
+        </Reveal>
       </div>
     </Section>
   )

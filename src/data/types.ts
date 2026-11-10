@@ -80,3 +80,11 @@ export interface OpenSourceProject {
   tech: string[]
   links: Array<{ label: string; href: string; kind: 'github' | 'registry' }>
 }
+
+/** One education or certification entry. Omit `by` / `period` when unknown; the UI simply hides them. */
+export interface Credential {
+  name: string
+  /** Institution (education) or platform (certification). */
+  by?: string
+  period?: string
+}
