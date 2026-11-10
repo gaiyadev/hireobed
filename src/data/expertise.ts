@@ -8,9 +8,9 @@ export const expertise: Expertise[] = [
     summary:
       "APIs and services built to stay fast, secure, and maintainable as they grow.",
     points: [
-      "Node.js, TypeScript, Express.js, NestJS, AdonisJS, Laravel, Go, Java",
+      "Node.js, TypeScript, Express.js, NestJS, AdonisJS, Laravel, Java, Spring Boot, Go",
       "RESTful APIs and microservices",
-      "PostgreSQL, MySQL, Redis, database optimization",
+      "PostgreSQL, MySQL, MongoDB, Redis, database optimization",
       "Authentication, authorization, and security",
     ],
   },
@@ -22,6 +22,7 @@ export const expertise: Expertise[] = [
       "Money-safe systems where every balance, transfer, and webhook has to be right.",
     points: [
       "Wallet infrastructure",
+      "Core banking",
       "Payment gateway integrations",
       "Transaction processing and financial ledger design",
       "Webhooks and payment reconciliation",
