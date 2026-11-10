@@ -87,4 +87,7 @@ export interface Credential {
   /** Institution (education) or platform (certification). */
   by?: string
   period?: string
+  /** Post-nominals earned, e.g. ['ACIPM', 'CPMP']. */
+  designations?: string[]
+  credentialId?: string
 }

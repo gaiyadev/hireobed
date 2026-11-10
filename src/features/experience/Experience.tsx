@@ -19,6 +19,11 @@ function CredentialGroup({ title, items }: { title: string; items: Credential[] 
                 {c.by}{c.by && c.period && ' · '}{c.period && <span className="font-mono text-xs">{c.period}</span>}
               </p>
             )}
+            {(c.designations || c.credentialId) && (
+              <p className="mt-0.5 font-mono text-xs text-subtle">
+                {[c.designations?.join(' · '), c.credentialId && `Cert. no. ${c.credentialId}`].filter(Boolean).join(' · ')}
+              </p>
+            )}
           </li>
         ))}
       </ul>
@@ -40,11 +45,11 @@ export function Experience() {
         ))}
       </ol>
 
-      <div className="mt-16 grid gap-5 md:grid-cols-2">
+      <div className="mt-16 grid items-start gap-5 md:grid-cols-2">
         <Reveal>
-          <Card className="h-full p-6">
+          <Card className="p-6">
             <h3 className="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-accent">Earlier experience</h3>
-            <ul className="space-y-5">
+            <ul className="space-y-7">
               {earlier.map((e) => (
                 <li key={e.company}>
                   <p className="font-semibold leading-snug">{e.role}</p>
@@ -60,8 +65,8 @@ export function Experience() {
             </ul>
           </Card>
         </Reveal>
-        <Reveal delay={0.06} className="h-full">
-          <Card className="h-full p-6">
+        <Reveal delay={0.06}>
+          <Card className="p-6">
             <CredentialGroup title="Education" items={education} />
             <div className="mt-6 border-t border-line pt-6">
               <CredentialGroup title="Certifications" items={certifications} />

@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { ArrowRight, Check, MapPin } from 'lucide-react'
+import { Check, MapPin } from 'lucide-react'
 import { credibility, site } from '@/data/site'
 import { Button } from '@/components/ui/Button'
 import { SocialLinks } from '@/components/ui/SocialLinks'
@@ -45,7 +45,7 @@ export function Hero() {
             </ul>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Button href="#contact" className="px-6 py-3">Let's Build Something <ArrowRight size={16} aria-hidden /></Button>
+              <Button href="#contact" className="px-6 py-3">Let's Build Something</Button>
               <Button href="#work" variant="secondary" className="px-6 py-3">Explore My Work</Button>
             </div>
             <div className="mt-8"><SocialLinks /></div>

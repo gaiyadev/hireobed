@@ -87,8 +87,19 @@ export const earlier: EarlierRole[] = [
 
 export const education: Credential[] = [
   { name: 'B.Sc. Mathematics', by: 'Kaduna State University', period: '2012 – 2017' },
-  // TODO: add the institution and year for the diploma.
-  { name: 'Postgraduate Diploma, Project Management' },
+  {
+    name: 'Postgraduate Diploma in Project Management',
+    by: 'The Chartered Institute of Project Management',
+    period: '2018',
+    designations: ['ACIPM', 'CPMP'],
+    credentialId: '001477',
+  },
+  {
+    name: 'Diploma in Facility Management (Dip.FM)',
+    by: 'Chartered Institute of Contract Project and Facility Management',
+    period: '2018',
+    credentialId: '0002570',
+  },
 ]
 
 export const certifications: Credential[] = [
