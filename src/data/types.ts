@@ -56,6 +56,8 @@ export interface Job {
   summary?: string
   /** Marks a fintech role: shown with an accent treatment and capability chips. */
   fintech?: boolean
+  /** Domain tag shown next to the role. Defaults to "Fintech" for fintech roles. */
+  domain?: string
   /** Money-safety capabilities you actually built in this role. */
   capabilities?: string[]
   /** Verified, measurable results only. Never add a number you cannot defend. */
@@ -68,6 +70,8 @@ export interface EarlierRole {
   role: string
   company: string
   type?: string
+  /** Short green tag next to the title, e.g. "Training" or "Internship". */
+  tag?: string
   period: string
   /** Label above the tags: "Stack" for engineering roles, "Taught" for instructor roles. */
   tagsLabel: 'Stack' | 'Taught'

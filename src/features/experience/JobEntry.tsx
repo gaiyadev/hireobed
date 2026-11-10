@@ -3,12 +3,13 @@ import { Badge } from '@/components/ui/Badge'
 import { cn } from '@/lib/cn'
 
 export function JobEntry({ job, current }: { job: Job; current?: boolean }) {
+  const domain = job.domain ?? (job.fintech ? 'Fintech' : undefined)
   return (
     <div className={cn('rounded-2xl border bg-surface p-6 sm:p-7', job.fintech ? 'border-accent/30' : 'border-line')}>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
         <h3 className="text-xl font-semibold tracking-tight">{job.role}</h3>
         <Badge tone={current ? 'accent' : 'neutral'}>{job.type}</Badge>
-        {job.fintech && <Badge tone="accent">Fintech</Badge>}
+        {domain && <Badge tone="accent">{domain}</Badge>}
       </div>
       <p className="mt-1 text-muted">
         {job.url ? (

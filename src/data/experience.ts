@@ -119,6 +119,7 @@ export const experience: Job[] = [
     period: "2023 – 2024",
     type: "Contract",
     fintech: true,
+    domain: "Workforce & Fintech",
     summary:
       "An HR and payroll SaaS platform with Juiceme, an earned-wage product that lets employers pay staff any day.",
     capabilities: [
@@ -155,9 +156,11 @@ export const experience: Job[] = [
   {
     role: "Lead Software Engineer",
     company: "Outsource Global",
+    url: "https://www.outsourceglobal.com/",
     location: "Abuja, Nigeria",
     period: "2021 – 2025",
     type: "Full time",
+    domain: "Future of Work",
     summary:
       "WorkNation, a workforce-development and learning platform serving large-scale user operations.",
     highlights: [
@@ -192,14 +195,21 @@ export const experience: Job[] = [
     location: "",
     period: "2020 – 2021",
     type: "Contract",
+    domain: "Social Event App",
+    summary:
+      "Afropolis, a social event app. Built the backend APIs, live chat, and shared UI components behind it.",
     points: [
       {
-        lead: "APIs and real-time",
-        text: "Built RESTful APIs in Laravel and Node.js and real-time features with WebSockets.",
+        lead: "Backend for a social event app",
+        text: "Built RESTful APIs in Laravel and Node.js to power the app's web and mobile clients.",
       },
       {
-        lead: "Shared components",
-        text: "Built reusable components in React, Vue.js, and React Native.",
+        lead: "Live chat",
+        text: "Built real-time live chat with WebSockets so users can message each other instantly.",
+      },
+      {
+        lead: "One UI toolkit across platforms",
+        text: "Built reusable components in React, Vue.js, and React Native for the app's web and mobile interfaces.",
       },
     ],
     tech: [
@@ -219,6 +229,7 @@ export const earlier: EarlierRole[] = [
     role: "Software Engineer and Lead Instructor",
     company: "Tribesquare Inc.",
     type: "Contract",
+    tag: "Training & Development",
     period: "2021",
     tagsLabel: "Stack",
     tech: [
@@ -233,6 +244,7 @@ export const earlier: EarlierRole[] = [
   {
     role: "Software Engineering Instructor",
     company: "Campus Technologies (NIIT)",
+    tag: "Training",
     period: "2019 – 2021",
     tagsLabel: "Taught",
     tech: [
@@ -248,6 +260,7 @@ export const earlier: EarlierRole[] = [
   {
     role: "Junior Software Engineer",
     company: "Ogohtech Computers",
+    tag: "Internship",
     period: "2017 – 2018",
     tagsLabel: "Stack",
     tech: [

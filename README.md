@@ -41,7 +41,7 @@ Copy `.env.example` to `.env` if you want a hosted contact form.
 Without it, the form validates, then opens the visitor's email app with the message prefilled.
 The UI says plainly that nothing has been sent until they send it from their mail client.
 
-**Domain:** the site assumes `https://gaiyaobed.com.ng`. If that changes, update it in
+**Domain:** the site assumes `https://obedgaiya.com`. If that changes, update it in
 `index.html` (canonical, Open Graph, Twitter, JSON-LD), `public/sitemap.xml`, `public/robots.txt`, and `siteUrl` in `src/data/site.ts`.
 
 **X (Twitter):** set `links.x` in `src/data/site.ts`. The icon is hidden until a URL is set.

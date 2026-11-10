@@ -47,7 +47,10 @@ export function Experience() {
             <ul className="space-y-7">
               {earlier.map((e) => (
                 <li key={e.company}>
-                  <p className="font-semibold leading-snug">{e.role}</p>
+                  <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+                    <p className="font-semibold leading-snug">{e.role}</p>
+                    {e.tag && <Badge tone="accent">{e.tag}</Badge>}
+                  </div>
                   <p className="mt-0.5 text-sm text-muted">
                     {e.company}{e.type && ` · ${e.type}`} · <span className="font-mono text-xs">{e.period}</span>
                   </p>

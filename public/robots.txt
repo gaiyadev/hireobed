@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gaiyaobed.com.ng/sitemap.xml
+Sitemap: https://obedgaiya.com/sitemap.xml

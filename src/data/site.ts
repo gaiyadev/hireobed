@@ -14,7 +14,7 @@ export const site = {
     "I design and build scalable software systems that solve real business problems. From high-performance backend architectures and fintech infrastructure to modern web and mobile applications, I turn complex ideas into reliable, production-ready products.",
   tagline:
     "I don't just build applications. I engineer scalable systems that power businesses.",
-  siteUrl: "https://gaiyaobed.com.ng",
+  siteUrl: "https://obedgaiya.com",
   // What a hiring manager should take away in five seconds.
   proofPoints: [
     "Fintech: wallets, ledgers, payments, and open banking in Nigeria and the UAE",
