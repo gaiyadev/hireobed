@@ -36,11 +36,12 @@ export const experience: Job[] = [
     tech: ["Flutter", "Firebase", "Node.js", "Express.js", "Vue.js", "Redis"],
   },
   {
-    role: "Co-Founder & Software Engineer",
+    role: "Senior Software Engineer",
     company: "Zuka Solutions Limited",
     url: "https://zuka-solutions.com/",
     location: "Nigeria",
     period: "2025 – 2026",
+    type: "Contract",
     fintech: true,
     summary:
       "A WhatsApp money assistant for balances, activity, receipts, transfers, and payments, running on partner financial infrastructure.",
