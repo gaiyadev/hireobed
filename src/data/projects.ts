@@ -145,7 +145,7 @@ export const projects: Project[] = [
       'A delivery marketplace connecting customers with local vendors (restaurants, retailers, small businesses) and independent riders in Lagos. Vendors get a real-time order dashboard and itemized settlements; riders get flexible, self-scheduled work with clear payouts.',
     problem:
       'Local vendors want more customers without running their own delivery fleet, and riders want flexible income. GidiDash connects both sides of that marketplace around the customer order.',
-    role: 'Backend Engineer', // TODO: add dates / contract type
+    role: 'Backend Engineer (Contract) · 2026',
     verified: true,
     tech: ['Flutter', 'Dart', 'NestJS', 'Node.js', 'React', 'WebSocket', 'PostgreSQL'],
     architecture: [
@@ -181,7 +181,7 @@ export const projects: Project[] = [
       'Real estate workflow in one place instead of email and WhatsApp: sales and contracts for developers, levies and residents for property managers, and portfolio and payments for property owners. Buyers and renters can browse listings and enquire directly.',
     problem:
       "Real estate runs on scattered paper, email threads, and WhatsApp groups standing in for a real system. Propmo gives developers, managers, and owners one shared system instead.",
-    role: 'Backend Engineer', // TODO: add dates / contract type
+    role: 'Backend Engineer (Contract) · 2026',
     verified: true,
     tech: ['Next.js', 'React', 'React Native', 'Laravel', 'PHP', 'PostgreSQL', 'Redis'],
     architecture: [
