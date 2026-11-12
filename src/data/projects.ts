@@ -16,13 +16,28 @@ export const projects: Project[] = [
       'A delivery marketplace connecting customers with local vendors (restaurants, retailers, small businesses) and independent riders in Lagos. Vendors get a real-time order dashboard and itemized settlements; riders get flexible, self-scheduled work with clear payouts.',
     problem:
       'Local vendors want more customers without running their own delivery fleet, and riders want flexible income. GidiDash connects both sides of that marketplace around the customer order.',
-    role: '', // TODO: your role and dates on this project
-    verified: false,
+    role: 'Backend Engineer', // TODO: add dates / contract type
+    verified: true,
     tech: ['Flutter', 'Dart', 'NestJS', 'Node.js', 'React', 'PostgreSQL'],
-    architecture: [], // TODO: describe what you actually built
-    challenges: [], // TODO: engineering challenges you solved
-    solutions: [], // TODO: solutions you implemented
-    impact: [],
+    architecture: [
+      'Backend owns the order lifecycle (placed, accepted by a vendor, assigned to a rider, picked up, delivered), with each transition validated against the order\'s current state.',
+      'Transactional outbox pattern for order, vendor, and payout emails: the email event is written in the same database transaction as the order or payout change, then a separate dispatcher delivers it with retries.',
+      'Itemized vendor settlements and rider payouts generated directly from the underlying order and delivery records.',
+    ],
+    challenges: [
+      'Keeping customers, vendors, and riders in agreement about where a single order stands as it moves through several hands.',
+      'Making sure an order confirmation, vendor notification, or payout email is never silently dropped if the request fails partway through or the mail provider is briefly down, and never sent twice for the same event.',
+      'Giving vendors and riders settlements and payouts that can be traced back to the specific orders behind them.',
+    ],
+    solutions: [
+      'Built the backend around an explicit order-state machine shared by the customer, vendor, and rider sides of the app.',
+      'Implemented the transactional outbox pattern so state changes and the emails that should follow from them commit atomically, then get delivered by a separate worker with retries instead of being sent inline and at risk of being lost.',
+      'Built itemized settlement and payout records derived directly from order and delivery data rather than a running balance.',
+    ],
+    impact: [
+      'Order, vendor, and payout emails are reliable by construction: a failed request or a down mail provider can no longer cause one to go silently missing or get sent twice.',
+      'Vendors and riders can check any settlement or payout against the exact orders it came from.',
+    ],
   },
   {
     slug: 'propmo',
