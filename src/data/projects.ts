@@ -7,6 +7,24 @@ import type { Project } from './types'
  */
 export const projects: Project[] = [
   {
+    slug: 'gididash',
+    image: '/projects/gididash.jpg',
+    live: 'https://www.gididash.com',
+    name: 'GidiDash',
+    tagline: 'On-demand delivery, powered by local vendors and riders.',
+    description:
+      'A delivery marketplace connecting customers with local vendors (restaurants, retailers, small businesses) and independent riders in Lagos. Vendors get a real-time order dashboard and itemized settlements; riders get flexible, self-scheduled work with clear payouts.',
+    problem:
+      'Local vendors want more customers without running their own delivery fleet, and riders want flexible income. GidiDash connects both sides of that marketplace around the customer order.',
+    role: '', // TODO: your role and dates on this project
+    verified: false,
+    tech: ['Flutter', 'Dart', 'NestJS', 'Node.js', 'React', 'PostgreSQL'],
+    architecture: [], // TODO: describe what you actually built
+    challenges: [], // TODO: engineering challenges you solved
+    solutions: [], // TODO: solutions you implemented
+    impact: [],
+  },
+  {
     slug: 'propmo',
     image: '/projects/propmo.jpg',
     live: 'https://propmo.vercel.app/',
@@ -18,7 +36,7 @@ export const projects: Project[] = [
       "Real estate runs on scattered paper, email threads, and WhatsApp groups standing in for a real system. Propmo gives developers, managers, and owners one shared system instead.",
     role: '', // TODO: your role and dates on this project
     verified: false,
-    tech: ['Next.js'], // TODO: add the rest of the real stack (backend, database, etc.)
+    tech: ['Next.js', 'React', 'Laravel', 'PHP', 'PostgreSQL', 'Redis'],
     architecture: [], // TODO: describe what you actually built
     challenges: [], // TODO: engineering challenges you solved
     solutions: [], // TODO: solutions you implemented
