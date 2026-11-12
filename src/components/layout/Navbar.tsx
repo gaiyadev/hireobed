@@ -27,10 +27,21 @@ export function Navbar() {
   const { theme, toggle } = useTheme()
 
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 12)
-    on()
+    let frame = 0
+    // Hysteresis (enter at 32px, leave at 12px) plus rAF throttling: without both, scrollY
+    // hovering right at one threshold during trackpad bounce flips the class dozens of times a
+    // second, and toggling backdrop-filter on/off that fast reads as a flicker in the header.
+    const update = () => {
+      frame = 0
+      setScrolled((was) => (window.scrollY > (was ? 12 : 32)))
+    }
+    const on = () => { if (!frame) frame = requestAnimationFrame(update) }
+    update()
     window.addEventListener('scroll', on, { passive: true })
-    return () => window.removeEventListener('scroll', on)
+    return () => {
+      window.removeEventListener('scroll', on)
+      if (frame) cancelAnimationFrame(frame)
+    }
   }, [])
 
   useEffect(() => {
@@ -40,9 +51,23 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  const solid = scrolled || open
+
   return (
-    <header className={cn('fixed inset-x-0 top-0 z-50 transition', scrolled || open ? 'border-b border-line bg-glass backdrop-blur-xl' : 'border-b border-transparent')}>
-      <nav aria-label="Primary" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+    <header className="fixed inset-x-0 top-0 z-50">
+      {/*
+        Always-mounted blur layer that only crossfades opacity. Adding/removing the
+        backdrop-blur-xl class itself (the old approach) makes the browser create and destroy a
+        compositor layer every time, which is what caused the flicker on scroll.
+      */}
+      <div
+        aria-hidden
+        className={cn(
+          'absolute inset-0 border-b bg-glass backdrop-blur-xl transition-opacity duration-300',
+          solid ? 'border-line opacity-100' : 'border-transparent opacity-0',
+        )}
+      />
+      <nav aria-label="Primary" className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="#top" className="flex items-center gap-2 whitespace-nowrap font-semibold tracking-tight" title="Back to top">
           <span aria-hidden className="grid h-7 w-7 place-items-center rounded-md bg-accent font-mono text-xs font-bold text-accent-ink">OG</span>
           <span className="sr-only sm:not-sr-only">{site.shortName}</span>
@@ -92,7 +117,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="lg:hidden"
+            className="relative lg:hidden"
           >
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 pb-5">
               {nav.map((n) => (
