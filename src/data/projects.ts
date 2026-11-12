@@ -7,76 +7,6 @@ import type { Project } from './types'
  */
 export const projects: Project[] = [
   {
-    slug: 'gididash',
-    image: '/projects/gididash.jpg',
-    live: 'https://www.gididash.com',
-    name: 'GidiDash',
-    tagline: 'On-demand delivery, powered by local vendors and riders.',
-    description:
-      'A delivery marketplace connecting customers with local vendors (restaurants, retailers, small businesses) and independent riders in Lagos. Vendors get a real-time order dashboard and itemized settlements; riders get flexible, self-scheduled work with clear payouts.',
-    problem:
-      'Local vendors want more customers without running their own delivery fleet, and riders want flexible income. GidiDash connects both sides of that marketplace around the customer order.',
-    role: 'Backend Engineer', // TODO: add dates / contract type
-    verified: true,
-    tech: ['Flutter', 'Dart', 'NestJS', 'Node.js', 'React', 'WebSocket', 'PostgreSQL'],
-    architecture: [
-      'Backend owns the order lifecycle (placed, accepted by a vendor, assigned to a rider, picked up, delivered), with each transition validated against the order\'s current state.',
-      'Live rider tracking over WebSocket: a rider\'s location streams to the customer and vendor in real time instead of the app polling for updates.',
-      'Transactional outbox pattern for order, vendor, and payout emails: the email event is written in the same database transaction as the order or payout change, then a separate dispatcher delivers it with retries.',
-      'Itemized vendor settlements and rider payouts generated directly from the underlying order and delivery records.',
-    ],
-    challenges: [
-      'Keeping customers, vendors, and riders in agreement about where a single order stands as it moves through several hands.',
-      'Showing a rider\'s live location to the customer and vendor without hammering the backend with constant polling requests.',
-      'Making sure an order confirmation, vendor notification, or payout email is never silently dropped if the request fails partway through or the mail provider is briefly down, and never sent twice for the same event.',
-      'Giving vendors and riders settlements and payouts that can be traced back to the specific orders behind them.',
-    ],
-    solutions: [
-      'Built the backend around an explicit order-state machine shared by the customer, vendor, and rider sides of the app.',
-      'Implemented live rider tracking with a WebSocket connection per active delivery, pushing location updates to the customer and vendor as they happen.',
-      'Implemented the transactional outbox pattern so state changes and the emails that should follow from them commit atomically, then get delivered by a separate worker with retries instead of being sent inline and at risk of being lost.',
-      'Built itemized settlement and payout records derived directly from order and delivery data rather than a running balance.',
-    ],
-    impact: [
-      'Order, vendor, and payout emails are reliable by construction: a failed request or a down mail provider can no longer cause one to go silently missing or get sent twice.',
-      'Vendors and riders can check any settlement or payout against the exact orders it came from.',
-    ],
-  },
-  {
-    slug: 'propmo',
-    image: '/projects/propmo.jpg',
-    live: 'https://propmo.vercel.app/',
-    name: 'Propmo',
-    tagline: 'One platform for developers, property managers, and property owners.',
-    description:
-      'Real estate workflow in one place instead of email and WhatsApp: sales and contracts for developers, levies and residents for property managers, and portfolio and payments for property owners. Buyers and renters can browse listings and enquire directly.',
-    problem:
-      "Real estate runs on scattered paper, email threads, and WhatsApp groups standing in for a real system. Propmo gives developers, managers, and owners one shared system instead.",
-    role: 'Backend Engineer', // TODO: add dates / contract type
-    verified: true,
-    tech: ['Next.js', 'React', 'Laravel', 'PHP', 'PostgreSQL', 'Redis'],
-    architecture: [
-      'Laravel backend serving three role-based workspaces (developer, manager, owner) off one shared data model, so a developer\'s sale is immediately visible as levy data to a manager and portfolio data to an owner, with no re-entry.',
-      'Contract engine with full version history: section-level amendment proposals that either side can accept or reject, with every change kept in an audit trail instead of living in email.',
-      'Payment verification pipeline that checks incoming payments against what\'s expected, flags mismatches with a specific rejection reason, and reconciles against legacy records; wallet and receipts generated from the same data.',
-      'Redis for caching and background job queues, so reconciliation and notification work run off the request path.',
-    ],
-    challenges: [
-      'Keeping developer, manager, and owner data in one shared model instead of three disconnected workspaces, so nothing has to be re-entered when a sale moves into operations.',
-      'Letting two sides negotiate a contract section by section without losing track of who proposed what, instead of the trail living across scattered emails.',
-      'Verifying payments against expected amounts and against legacy records that predate the platform, with a clear reason whenever something doesn\'t match.',
-    ],
-    solutions: [
-      'Built the backend around one shared data model across the three workspaces, with role-based access controlling what each side sees and can change.',
-      'Built a contract engine with version history and section-level amendment proposals, each one explicitly accepted or rejected and kept in an audit trail.',
-      'Built a payment verification pipeline with explicit rejection reasons and reconciliation against legacy records, backing a wallet and receipts generated from the same ledger.',
-    ],
-    impact: [
-      "A contract's full negotiation history is traceable instead of scattered across email threads.",
-      'Payment mismatches surface with a specific reason instead of being discovered later during reconciliation.',
-    ],
-  },
-  {
     slug: 'zuka',
     image: '/projects/zuka.jpg',
     live: 'https://getzuka.co/',
@@ -203,6 +133,76 @@ export const projects: Project[] = [
       '40% faster API response times through caching.',
       'Technical hiring 60% more efficient with the coding challenge platform.',
       'Code review standards reduced defects by 30%.',
+    ],
+  },
+  {
+    slug: 'gididash',
+    image: '/projects/gididash.jpg',
+    live: 'https://www.gididash.com',
+    name: 'GidiDash',
+    tagline: 'On-demand delivery, powered by local vendors and riders.',
+    description:
+      'A delivery marketplace connecting customers with local vendors (restaurants, retailers, small businesses) and independent riders in Lagos. Vendors get a real-time order dashboard and itemized settlements; riders get flexible, self-scheduled work with clear payouts.',
+    problem:
+      'Local vendors want more customers without running their own delivery fleet, and riders want flexible income. GidiDash connects both sides of that marketplace around the customer order.',
+    role: 'Backend Engineer', // TODO: add dates / contract type
+    verified: true,
+    tech: ['Flutter', 'Dart', 'NestJS', 'Node.js', 'React', 'WebSocket', 'PostgreSQL'],
+    architecture: [
+      'Backend owns the order lifecycle (placed, accepted by a vendor, assigned to a rider, picked up, delivered), with each transition validated against the order\'s current state.',
+      'Live rider tracking over WebSocket: a rider\'s location streams to the customer and vendor in real time instead of the app polling for updates.',
+      'Transactional outbox pattern for order, vendor, and payout emails: the email event is written in the same database transaction as the order or payout change, then a separate dispatcher delivers it with retries.',
+      'Itemized vendor settlements and rider payouts generated directly from the underlying order and delivery records.',
+    ],
+    challenges: [
+      'Keeping customers, vendors, and riders in agreement about where a single order stands as it moves through several hands.',
+      'Showing a rider\'s live location to the customer and vendor without hammering the backend with constant polling requests.',
+      'Making sure an order confirmation, vendor notification, or payout email is never silently dropped if the request fails partway through or the mail provider is briefly down, and never sent twice for the same event.',
+      'Giving vendors and riders settlements and payouts that can be traced back to the specific orders behind them.',
+    ],
+    solutions: [
+      'Built the backend around an explicit order-state machine shared by the customer, vendor, and rider sides of the app.',
+      'Implemented live rider tracking with a WebSocket connection per active delivery, pushing location updates to the customer and vendor as they happen.',
+      'Implemented the transactional outbox pattern so state changes and the emails that should follow from them commit atomically, then get delivered by a separate worker with retries instead of being sent inline and at risk of being lost.',
+      'Built itemized settlement and payout records derived directly from order and delivery data rather than a running balance.',
+    ],
+    impact: [
+      'Order, vendor, and payout emails are reliable by construction: a failed request or a down mail provider can no longer cause one to go silently missing or get sent twice.',
+      'Vendors and riders can check any settlement or payout against the exact orders it came from.',
+    ],
+  },
+  {
+    slug: 'propmo',
+    image: '/projects/propmo.jpg',
+    live: 'https://propmo.vercel.app/',
+    name: 'Propmo',
+    tagline: 'One platform for developers, property managers, and property owners.',
+    description:
+      'Real estate workflow in one place instead of email and WhatsApp: sales and contracts for developers, levies and residents for property managers, and portfolio and payments for property owners. Buyers and renters can browse listings and enquire directly.',
+    problem:
+      "Real estate runs on scattered paper, email threads, and WhatsApp groups standing in for a real system. Propmo gives developers, managers, and owners one shared system instead.",
+    role: 'Backend Engineer', // TODO: add dates / contract type
+    verified: true,
+    tech: ['Next.js', 'React', 'React Native', 'Laravel', 'PHP', 'PostgreSQL', 'Redis'],
+    architecture: [
+      'Laravel backend serving three role-based workspaces (developer, manager, owner) off one shared data model, so a developer\'s sale is immediately visible as levy data to a manager and portfolio data to an owner, with no re-entry.',
+      'Contract engine with full version history: section-level amendment proposals that either side can accept or reject, with every change kept in an audit trail instead of living in email.',
+      'Payment verification pipeline that checks incoming payments against what\'s expected, flags mismatches with a specific rejection reason, and reconciles against legacy records; wallet and receipts generated from the same data.',
+      'Redis for caching and background job queues, so reconciliation and notification work run off the request path.',
+    ],
+    challenges: [
+      'Keeping developer, manager, and owner data in one shared model instead of three disconnected workspaces, so nothing has to be re-entered when a sale moves into operations.',
+      'Letting two sides negotiate a contract section by section without losing track of who proposed what, instead of the trail living across scattered emails.',
+      'Verifying payments against expected amounts and against legacy records that predate the platform, with a clear reason whenever something doesn\'t match.',
+    ],
+    solutions: [
+      'Built the backend around one shared data model across the three workspaces, with role-based access controlling what each side sees and can change.',
+      'Built a contract engine with version history and section-level amendment proposals, each one explicitly accepted or rejected and kept in an audit trail.',
+      'Built a payment verification pipeline with explicit rejection reasons and reconciliation against legacy records, backing a wallet and receipts generated from the same ledger.',
+    ],
+    impact: [
+      "A contract's full negotiation history is traceable instead of scattered across email threads.",
+      'Payment mismatches surface with a specific reason instead of being discovered later during reconciliation.',
     ],
   },
 ]
