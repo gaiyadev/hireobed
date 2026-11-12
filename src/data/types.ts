@@ -69,6 +69,7 @@ export interface Job {
 export interface EarlierRole {
   role: string
   company: string
+  url?: string
   type?: string
   /** Short green tag next to the title, e.g. "Training" or "Internship". */
   tag?: string

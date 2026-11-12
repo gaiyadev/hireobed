@@ -52,7 +52,10 @@ export function Experience() {
                     {e.tag && <Badge tone="accent">{e.tag}</Badge>}
                   </div>
                   <p className="mt-0.5 text-sm text-muted">
-                    {e.company}{e.type && ` · ${e.type}`} · <span className="font-mono text-xs">{e.period}</span>
+                    {e.url ? (
+                      <a href={e.url} target="_blank" rel="noreferrer noopener" className="underline decoration-line-strong underline-offset-4 transition hover:text-accent">{e.company}</a>
+                    ) : e.company}
+                    {e.type && ` · ${e.type}`} · <span className="font-mono text-xs">{e.period}</span>
                   </p>
                   <div className="mt-2 flex flex-wrap items-center gap-1.5">
                     <span className="mr-1 font-mono text-[11px] uppercase tracking-[0.16em] text-subtle">{e.tagsLabel}</span>

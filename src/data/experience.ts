@@ -228,6 +228,7 @@ export const earlier: EarlierRole[] = [
   {
     role: "Software Engineer and Lead Instructor",
     company: "Tribesquare Inc.",
+    url: "https://www.tribesquare.co/",
     type: "Contract",
     tag: "Training & Development",
     period: "2021",
@@ -244,6 +245,7 @@ export const earlier: EarlierRole[] = [
   {
     role: "Software Engineering Instructor",
     company: "Campus Technologies (NIIT)",
+    url: "https://niitkaduna.com/",
     tag: "Training",
     period: "2019 – 2021",
     tagsLabel: "Taught",
