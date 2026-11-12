@@ -16,7 +16,7 @@ export const projects: Project[] = [
       "Check balances and activity, and send or receive money through chat. Every consequential action is shown for review and needs the user's approval. Built by Zuka Solutions, running on partner financial infrastructure.",
     problem:
       "Moving money over chat is convenient but risky: mistakes and duplicate sends are costly. Zuka keeps the convenience and adds an explicit review-and-approve step.",
-    role: "Co-Founder & Software Engineer, Zuka Solutions Limited · 2025 – Present",
+    role: "Co-Founder & Software Engineer, Zuka Solutions Limited · 2025 – 2026",
     verified: true,
     tech: ["WhatsApp", "FastAPI", "Node.js", "Fastify", "Spring Boot", "React"],
     architecture: [

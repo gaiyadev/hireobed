@@ -40,8 +40,7 @@ export const experience: Job[] = [
     company: "Zuka Solutions Limited",
     url: "https://zuka-solutions.com/",
     location: "Nigeria",
-    period: "2025 – Present",
-    type: "Co-founder",
+    period: "2025 – 2026",
     fintech: true,
     summary:
       "A WhatsApp money assistant for balances, activity, receipts, transfers, and payments, running on partner financial infrastructure.",

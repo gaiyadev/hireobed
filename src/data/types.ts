@@ -51,7 +51,8 @@ export interface Job {
   url?: string
   location: string
   period: string
-  type: string
+  /** Badge next to the title, e.g. "Contract" or "Full time". Omit to show no badge. */
+  type?: string
   /** One line on what the product is and why it mattered. */
   summary?: string
   /** Marks a fintech role: shown with an accent treatment and capability chips. */
