@@ -7,6 +7,24 @@ import type { Project } from './types'
  */
 export const projects: Project[] = [
   {
+    slug: 'propmo',
+    image: '/projects/propmo.jpg',
+    live: 'https://propmo.vercel.app/',
+    name: 'Propmo',
+    tagline: 'One platform for developers, property managers, and property owners.',
+    description:
+      'Real estate workflow in one place instead of email and WhatsApp: sales and contracts for developers, levies and residents for property managers, and portfolio and payments for property owners. Buyers and renters can browse listings and enquire directly.',
+    problem:
+      "Real estate runs on scattered paper, email threads, and WhatsApp groups standing in for a real system. Propmo gives developers, managers, and owners one shared system instead.",
+    role: '', // TODO: your role and dates on this project
+    verified: false,
+    tech: ['Next.js'], // TODO: add the rest of the real stack (backend, database, etc.)
+    architecture: [], // TODO: describe what you actually built
+    challenges: [], // TODO: engineering challenges you solved
+    solutions: [], // TODO: solutions you implemented
+    impact: [],
+  },
+  {
     slug: 'zuka',
     image: '/projects/zuka.jpg',
     live: 'https://getzuka.co/',

@@ -76,7 +76,9 @@ export function ProjectModal({ project, onClose }: { project: Project | null; on
                 <h3 id="project-modal-title" className="text-3xl font-semibold tracking-tight">{project.name}</h3>
                 <p className="mt-1 text-accent">{project.tagline}</p>
                 <p className="mt-4 leading-relaxed text-muted">{project.description}</p>
-                <dl className="mt-5 text-sm"><dt className="inline font-mono text-xs uppercase tracking-wider text-subtle">Role · </dt><dd className="inline text-fg">{project.role}</dd></dl>
+                {project.role && (
+                  <dl className="mt-5 text-sm"><dt className="inline font-mono text-xs uppercase tracking-wider text-subtle">Role · </dt><dd className="inline text-fg">{project.role}</dd></dl>
+                )}
                 {!project.verified && (
                   <p className="mt-4 rounded-lg border border-line bg-surface-2 px-4 py-3 text-xs text-muted">
                     Detailed case study in progress. Only information confirmed so far is shown.
