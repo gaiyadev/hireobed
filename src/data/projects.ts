@@ -52,13 +52,29 @@ export const projects: Project[] = [
       'Real estate workflow in one place instead of email and WhatsApp: sales and contracts for developers, levies and residents for property managers, and portfolio and payments for property owners. Buyers and renters can browse listings and enquire directly.',
     problem:
       "Real estate runs on scattered paper, email threads, and WhatsApp groups standing in for a real system. Propmo gives developers, managers, and owners one shared system instead.",
-    role: '', // TODO: your role and dates on this project
-    verified: false,
+    role: 'Backend Engineer', // TODO: add dates / contract type
+    verified: true,
     tech: ['Next.js', 'React', 'Laravel', 'PHP', 'PostgreSQL', 'Redis'],
-    architecture: [], // TODO: describe what you actually built
-    challenges: [], // TODO: engineering challenges you solved
-    solutions: [], // TODO: solutions you implemented
-    impact: [],
+    architecture: [
+      'Laravel backend serving three role-based workspaces (developer, manager, owner) off one shared data model, so a developer\'s sale is immediately visible as levy data to a manager and portfolio data to an owner, with no re-entry.',
+      'Contract engine with full version history: section-level amendment proposals that either side can accept or reject, with every change kept in an audit trail instead of living in email.',
+      'Payment verification pipeline that checks incoming payments against what\'s expected, flags mismatches with a specific rejection reason, and reconciles against legacy records; wallet and receipts generated from the same data.',
+      'Redis for caching and background job queues, so reconciliation and notification work run off the request path.',
+    ],
+    challenges: [
+      'Keeping developer, manager, and owner data in one shared model instead of three disconnected workspaces, so nothing has to be re-entered when a sale moves into operations.',
+      'Letting two sides negotiate a contract section by section without losing track of who proposed what, instead of the trail living across scattered emails.',
+      'Verifying payments against expected amounts and against legacy records that predate the platform, with a clear reason whenever something doesn\'t match.',
+    ],
+    solutions: [
+      'Built the backend around one shared data model across the three workspaces, with role-based access controlling what each side sees and can change.',
+      'Built a contract engine with version history and section-level amendment proposals, each one explicitly accepted or rejected and kept in an audit trail.',
+      'Built a payment verification pipeline with explicit rejection reasons and reconciliation against legacy records, backing a wallet and receipts generated from the same ledger.',
+    ],
+    impact: [
+      "A contract's full negotiation history is traceable instead of scattered across email threads.",
+      'Payment mismatches surface with a specific reason instead of being discovered later during reconciliation.',
+    ],
   },
   {
     slug: 'zuka',
